@@ -1,4 +1,5 @@
-# COURSERA_-_Basic-Image-Classification-with-TensorFlow
+COURSERA_-_Basic-Image-Classification-with-TensorFlow
+# COURSERA - Basic Image Classification with TensorFlow
 
 ---
 
