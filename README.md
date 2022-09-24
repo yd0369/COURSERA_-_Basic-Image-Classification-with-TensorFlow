@@ -66,3 +66,19 @@ COURSERA_-_Basic-Image-Classification-with-TensorFlow
 - Predictions on the test set.
 - Visualizing the predictions.
 
+---
+---
+
+
+# Solution :
+
+
+- Create Python Virtual Environment
+```bash
+python3 -m venv COURSERA_PROJECT_VENV
+```
+
+- Activate Virtual Environment
+```bash
+source COURSERA_PROJECT_VENV/bin/activate
+```
