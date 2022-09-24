@@ -72,6 +72,8 @@ COURSERA_-_Basic-Image-Classification-with-TensorFlow
 
 # My Steps :
 
+### Session 1
+
 - Copy all template given in the workspace.
 
 - Create Python Virtual Environment
@@ -93,3 +95,39 @@ pip3 install jupyter-lab notebook
 ```bash
 pip3 install tensorflow
 ```
+
+- Commented Line as it was using deprecated function of logging
+```python
+# tf.compat.v1.logging.set_verbosity(tf.logging.ERROR)
+```
+
+### Session 2
+
+
+- Added to shell to import the mnist dataset
+```python
+from tensorflow.keras.datasets import mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+```
+  Log : 
+  ```text
+  Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+  11490434/11490434 [==============================] - 2s 0us/step
+  ```
+
+- Will try to check the size of the train and test dataset.
+```python
+print("x_train size :", len(x_train))
+print("y_train size :", len(y_train))
+print("x_test  size :", len(x_test))
+print("y_test  size :", len(y_test))
+```
+  Log : 
+  ```text
+  x_train size : 60000
+  y_train size : 60000
+  x_test  size : 10000
+  y_test  size : 10000
+  ```
+  - Coming to conclusion there are 60000 Training Images and 10000 for Testing and Model Evaluation Purposes
+
