@@ -70,8 +70,9 @@ COURSERA_-_Basic-Image-Classification-with-TensorFlow
 ---
 
 
-# Solution :
+# My Steps :
 
+- Copy all template given in the workspace.
 
 - Create Python Virtual Environment
 ```bash
@@ -82,3 +83,10 @@ python3 -m venv COURSERA_PROJECT_VENV
 ```bash
 source COURSERA_PROJECT_VENV/bin/activate
 ```
+
+- Installing JupyterLab and Jupyter Notebook
+```bash
+pip3 install jupyter-lab notebook
+```
+
+- 
