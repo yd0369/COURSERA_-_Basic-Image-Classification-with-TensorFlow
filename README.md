@@ -126,11 +126,34 @@ print("x_test  size :", len(x_test))
 print("y_test  size :", len(y_test))
 ```
   Log : 
-  ```text
+  ```python
   x_train size : 60000
   y_train size : 60000
   x_test  size : 10000
   y_test  size : 10000
   ```
   - Coming to conclusion there are 60000 Training Images and 10000 for Testing and Model Evaluation Purposes
+
+#### 2. Shapes of Imported Arrays
+
+- Displaying Shape of Numpy Arrays
+```python
+print('x_train shape :', x_train.shape)
+print('y_train shape :', y_train.shape)
+print('x_test  shape :', x_test.shape)
+print('y_test  shape :', y_test.shape) 
+```
+  Log :
+  ```python
+  x_train shape : (60000, 28, 28)
+  y_train shape : (60000,)
+  x_test  shape : (10000, 28, 28)
+  y_test  shape : (10000,)
+  ```
+  - (examples, rows, columns)
+  - so there are 60000 and 10000 images of train and test respectively 
+  - the 28, 28 represents the rows and columns of the image
+  - Meaning that the resolution of image is 28x28 pixels
+
+### Plot an Image Example
 
