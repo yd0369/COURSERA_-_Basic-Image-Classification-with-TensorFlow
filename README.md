@@ -72,7 +72,7 @@ COURSERA_-_Basic-Image-Classification-with-TensorFlow
 
 # My Steps :
 
-### Session 1
+### Task 1: Introduction
 
 - Copy all template given in the workspace.
 
@@ -103,7 +103,7 @@ pip3 install tensorflow
 
 ---
 
-### Session 2
+### Task 2: The Dataset
 
 #### 1. Import MNIST
 
@@ -186,4 +186,9 @@ print("Class Label : ", y_train[test_image])
 
 #### 4. Displaying Label 
 
-- 
+- Print all the labels / classes of the train and test
+```python
+print("y_train classes :",set(y_train))
+print("y_test  classes :",set(y_test))
+```
+
