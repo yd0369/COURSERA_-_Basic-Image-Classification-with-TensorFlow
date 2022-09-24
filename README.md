@@ -101,8 +101,11 @@ pip3 install tensorflow
 # tf.compat.v1.logging.set_verbosity(tf.logging.ERROR)
 ```
 
+---
+
 ### Session 2
 
+#### 1. Import MNIST
 
 - Added to shell to import the mnist dataset
 ```python
