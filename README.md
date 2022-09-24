@@ -157,3 +157,7 @@ print('y_test  shape :', y_test.shape)
 
 ### Plot an Image Example
 
+- Installing Matplotlib
+```bash
+pip3 install matplotlib
+```
