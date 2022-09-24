@@ -89,4 +89,7 @@ source COURSERA_PROJECT_VENV/bin/activate
 pip3 install jupyter-lab notebook
 ```
 
-- 
+- Installing Tensorflow
+```bash
+pip3 install tensorflow
+```
