@@ -17,13 +17,13 @@
 ### Course Structure
 - This course is divided into 4 parts:
 
-1. Course Overview: This introductory reading material.
+  1. Course Overview: This introductory reading material.
 
-2. Basic Image Classification Project: This is the hands on project that we will work on in Rhyme.
+  2. Basic Image Classification Project: This is the hands on project that we will work on in Rhyme.
 
-3. Ungraded Quiz: Check your understanding of the concepts learned in the hands on project with this ungraded quiz.
+  3. Ungraded Quiz: Check your understanding of the concepts learned in the hands on project with this ungraded quiz.
 
-4. Graded Quiz: This is the final assignment that you need to pass in order to finish the course successfully.
+  4. Graded Quiz: This is the final assignment that you need to pass in order to finish the course successfully.
 
 ### Project Structure
 - The hands on project on Basic Image Classification is divided into following tasks:
