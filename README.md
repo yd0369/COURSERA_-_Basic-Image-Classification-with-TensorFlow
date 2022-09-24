@@ -231,3 +231,21 @@ After this encoding, every label will be converted to a list with 10 elements an
     - Before it was just 1 dimensional.
     - Now each value has its own 10 elements vector **[One Hot Shot Encoded]**
 
+- Why we did this encoding ?
+  - The answer is we want to make a classifier not a regression model.
+  - Having binary values for each class individually will make classification easy.
+  - **Classification deals with categorical data.**
+
+### 3. Display Encoded Labels
+
+- Just displaying Encoded Value and comparing with the original
+  ```python
+  print("y_train :", y_train_encoded[12], "--->", y_train[12])
+  print("y_test  :", y_test_encoded[12], "--->", y_test[12])
+  ```
+- Output will be :
+  ```python
+  y_train : [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.] ---> 3
+  y_test  : [0. 0. 0. 0. 0. 0. 0. 0. 0. 1.] ---> 9
+  ```  
+
