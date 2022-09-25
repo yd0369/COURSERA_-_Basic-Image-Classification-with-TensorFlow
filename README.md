@@ -441,3 +441,69 @@ After this encoding, every label will be converted to a list with 10 elements an
   loss, accuracy = model.evaluate(x_test_norm, y_test_encoded)
   print('Test dataset accuracy :', accuracy*100)
   ```
+
+--- 
+
+### Task 8: Predictions
+
+#### 1. Predictions on Test Set
+
+- Getting the predictions data
+  ```python
+  predits = model.predict(x_test_norm)
+  print("Shape of Predictions :", predits.shape)
+  ```
+
+#### 2. Plotting the Results
+
+- Seeing first 100 images form test case :
+  ```python
+  plt.figure(figsize=(20,20))
+
+  start_index = 0
+
+  for i in range(100):
+      plt.subplot(10, 10, i+1)
+      plt.grid(False)
+      plt.xticks([])
+      plt.yticks([])
+
+      pred = np.argmax(predits[start_index+i])
+      gt = y_test[start_index+i]
+
+      col = 'g'
+      if pred != gt:
+          col = 'r'
+      
+      plt.xlabel('i={}, pred={}, gt={}'.format(start_index+i, pred, gt), color=col)
+      plt.imshow(x_test[start_index+i], cmap='binary')
+  plt.show()
+  ```
+
+- Also we can see prediction score for first 100 images using this :
+  ```python
+  plt.figure(figsize=(20,20))
+
+start_index = 0
+
+for i in range(100):
+    plt.subplot(10, 10, i+1)
+    plt.grid(False)
+    plt.xticks([])
+    plt.yticks([])
+
+    pred = np.argmax(predits[start_index+i])
+    gt = y_test[start_index+i]
+
+    col = 'g'
+    if pred != gt:
+        col = 'r'
+    
+    plt.xlabel('i={}, pred={}, gt={}'.format(start_index+i, pred, gt), color=col)
+    plt.plot(predits[i])
+plt.show()
+  ```
+
+
+---
+# The End
