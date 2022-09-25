@@ -433,4 +433,11 @@ After this encoding, every label will be converted to a list with 10 elements an
   ```
   - Here epochs means the number of times we will go through examples.
   - In our case going through examples 3 times gives acceptable accuracy so we will settle with epochs as 3.
-  
+
+#### 2. Evaluating the Model 
+
+- Lets Evaluate the accuracy of the model with test dataset
+  ```python
+  loss, accuracy = model.evaluate(x_test_norm, y_test_encoded)
+  print('Test dataset accuracy :', accuracy*100)
+  ```
