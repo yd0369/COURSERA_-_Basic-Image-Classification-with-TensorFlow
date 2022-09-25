@@ -326,7 +326,7 @@ After this encoding, every label will be converted to a list with 10 elements an
   x_mean = np.mean(x_train_reshaped)
   x_std  = np.mean(x_train_reshaped)
   ```
-- We will also need epsilon 
+- Why Epsilon : if the values of x_std is too low will not effect data to be normalized so we add epsilon to help for better normalization
   ```python
   epsilon = 1e-10
   ```
@@ -359,18 +359,19 @@ After this encoding, every label will be converted to a list with 10 elements an
 - The Model defined is : (2 hidden layer and 1 output layer)
   ```python
   from tensorflow.keras.models import Sequential
-  from tensorflow.keras.models import Dense
+  from tensorflow import keras
+  from tensorflow.keras import layers
 
-  model = Sequential{[
-      Dense(128, activation="relu", input_shape=(784,)),
-      Dense(128, activation="relu"),
-      Dense(10, activation="softmax")
-  ]}
+  model = keras.Sequential([
+      layers.Dense(128, activation="relu", input_shape=(784,)),
+      layers.Dense(128, activation="relu"),
+      layers.Dense(10, activation="softmax")
+  ])
   ```
   - The first layer is the hidden input layer which takes input image.
-  - It has 128 Nodes and uses Relu as activation function.
-  - The Second layer is the hidden input layer with 128 Nodes and Relu Activation Function.
-  - The last layer is output layer with 10 Nodes as output for each individual class and uses softmax activation function for Each class Probability Score.
+  - It has 128 Nodes and uses **Relu** as activation function.
+  - The Second layer is the hidden input layer with 128 Nodes and **Relu** Activation Function.
+  - The last layer is output layer with 10 Nodes as output for each individual class and uses **softmax** activation function for Each class Probability Score.
 - There are many types of activation function in Neural Networks.
 - **Relu** is most used activation function.
 - **Relu** is simply a linear function for all the positive values and it's simply set to zero for all the negative values.
@@ -379,3 +380,12 @@ After this encoding, every label will be converted to a list with 10 elements an
 - This probability scores are upto 1.
 
 #### 2. Compiling the Model
+
+- Defining few things to compile the model:
+  ```python
+  model 
+  ```
+  - We will use optimizer function as 'sgd'
+  - sgd stands for **Stochastic Gradient Descent**
+  - also we need to define loss function as 'categorical_crossentropy'
+  - and a metric to look at as model train ---> accuracy
