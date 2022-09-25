@@ -298,11 +298,25 @@ After this encoding, every label will be converted to a list with 10 elements an
   print("x_test_reshaped  shape : ", x_test_reshaped.shape)
   ```
   - The Output is : 
-  ```python
-  x_train shape :  (60000, 28, 28)
-  x_test  shape :  (10000, 28, 28)
-  x_train_reshaped shape :  (60000, 784)
-  x_test_reshaped  shape :  (10000, 784)
-  ```
+    ```python
+    x_train shape :  (60000, 28, 28)
+    x_test  shape :  (10000, 28, 28)
+    x_train_reshaped shape :  (60000, 784)
+    x_test_reshaped  shape :  (10000, 784)
+    ```
 
 #### 2. Displaying Pixel Values
+
+- Displaying all the unique values of the one example
+  ```python
+  print(set(x_train_reshaped[12]))
+  ```
+  - The Output will be :
+    ```python
+    {0, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 15, 22, 23, 24, 25, 30, 33, 35, 45, 48, 49, 50, 52, 53, 54, 55, 58, 61, 63, 66, 67, 73, 74, 75, 86, 88, 90, 91, 99, 101, 103, 116, 118, 122, 125, 126, 127, 131, 137, 138, 140, 141, 142, 150, 152, 153, 154, 155, 158, 166, 168, 181, 182, 188, 189, 190, 191, 192, 194, 200, 202, 205, 209, 210, 220, 224, 234, 235, 241, 242, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255}
+    ```
+  - It expresses that there are values from range 0-255.
+  - It is normal for displaying images.
+  - But for the model to learn different weight and biases for different layers the computation will be more effective and fast if we normalize this values.
+
+#### 3. Data Normalization
