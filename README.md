@@ -420,3 +420,17 @@ After this encoding, every label will be converted to a list with 10 elements an
   | dense | 128 | (748*128)+128 = 100480 |
   | dense_1 | 128 | (128*128)+128 = 16512 |
   | dense_2 | 10 | (128*10)+10 = 1290 |
+
+---
+
+### Task 7: Training the Model
+
+#### 1. Training the Model
+
+- Lets train the model 
+  ```python
+  model.fit(x_train_norm, y_train_encoded, epochs=3)
+  ```
+  - Here epochs means the number of times we will go through examples.
+  - In our case going through examples 3 times gives acceptable accuracy so we will settle with epochs as 3.
+  
