@@ -383,9 +383,40 @@ After this encoding, every label will be converted to a list with 10 elements an
 
 - Defining few things to compile the model:
   ```python
-  model 
+  model.compile(
+    optimizer='sgd',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+  )
+
+  model.summary()
   ```
   - We will use optimizer function as 'sgd'
   - sgd stands for **Stochastic Gradient Descent**
   - also we need to define loss function as 'categorical_crossentropy'
   - and a metric to look at as model train ---> accuracy
+
+- The output of model.summary() will be :
+  ```python 
+  Model: "sequential"
+  _________________________________________________________________
+  Layer (type)                Output Shape              Param #   
+  =================================================================
+  dense (Dense)               (None, 128)               100480    
+                                                                  
+  dense_1 (Dense)             (None, 128)               16512     
+                                                                  
+  dense_2 (Dense)             (None, 10)                1290      
+                                                                  
+  =================================================================
+  Total params: 118,282
+  Trainable params: 118,282
+  Non-trainable params: 0
+  _________________________________________________________________
+  ```
+  - Parameters are just # of nodes connected
+  | Layer Name | Output Shape | Param # |
+  |---|---|---|
+  | dense | 128 | (748*128)+128 = 100480 |
+  | dense_1 | 128 | (128*128)+128 = 16512 |
+  | dense_2 | 10 | (128*10)+10 = 1290 |
