@@ -236,7 +236,7 @@ After this encoding, every label will be converted to a list with 10 elements an
   - Having binary values for each class individually will make classification easy.
   - **Classification deals with categorical data.**
 
-### 3. Display Encoded Labels
+#### 3. Display Encoded Labels
 
 - Just displaying Encoded Value and comparing with the original
   ```python
@@ -249,3 +249,43 @@ After this encoding, every label will be converted to a list with 10 elements an
   y_test  : [0. 0. 0. 0. 0. 0. 0. 0. 0. 1.] ---> 9
   ```  
 
+---
+
+### Task 4: Neural Networks
+
+![Single Neuron](src/images/1_2.png)
+
+- In given image :
+  | Symbol | Description |
+  | --- | --- |
+  | b | Interceptor/ Bias |
+  | x1, x2, x3 | Input Parameters |
+  | y | Output |
+  | w1, w2, w3 | Weights |
+
+![Single Neuron with 784 features](images/1_3.png)
+
+- 28*28 = 784 Features
+- Too many features... so the linear equation model it little complex to be applied.
+
+##### Neural Network
+![Neural Network with 2 hidden layers](images/1_4.png)
+
+- Activation Functions allows model to learn non linear patterns.
+
+---
+
+### Task 5: Preprocessing the Examples
+
+#### 1. Unrolling N-dimensional Arrays to Vectors
+
+- Import Numpy
+  ```python
+  import numpy as np
+  ```
+
+- Converting 2-dimensions image to 1-dimension vector
+  ```python
+  x_train_reshaped = np.reshape(x_train, (60000, 784))
+  x_test_reshaped  = np.reshape(x_test, (10000, 784))
+  ```
