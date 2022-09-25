@@ -320,3 +320,62 @@ After this encoding, every label will be converted to a list with 10 elements an
   - But for the model to learn different weight and biases for different layers the computation will be more effective and fast if we normalize this values.
 
 #### 3. Data Normalization
+
+- We will normalize the values of training set by calculating the mean and standard deviation.
+  ```python
+  x_mean = np.mean(x_train_reshaped)
+  x_std  = np.mean(x_train_reshaped)
+  ```
+- We will also need epsilon 
+  ```python
+  epsilon = 1e-10
+  ```
+- So for final normalization we will use this formula :
+  ```python
+  # For Training dataset :
+  x_train_norm = (x_train_reshaped - x_mean) / (x_std + epsilon)
+
+  # For Testing dataset :
+  x_test_norm = (x_test_reshaped - x_mean) / (x_std + epsilon)
+  ```
+
+#### 4. Display Normalized Pixel Values
+
+- Just displaying all the unique values form normalized data :
+  ```python
+  print(set(x_train_norm[12]))
+  ```
+  - The New values are much more smaller as compared to original data
+  ```python
+  {-0.9999999999969986, -0.6398388795779748, 1.731221829847265, 3.2619065916281156, 1.9713292434599472, 3.652081138748725, 6.3833029685929885, 4.4624436596915285, 2.9317588979106772, 3.1418528848217746, 6.6234103822056705, 6.5633835288025, 5.302819607335917, 6.05315527487555, 5.062712193723234, 6.413316395294574, 3.5920542853455544, 4.822604780110552, 6.443329821996159, 0.050469934558487375, 6.653423808907256, 6.2632492617866475, 2.7516783377011653, 3.982228832466163, 0.5006713350822671, -0.7298791596827308, 2.5415843507900684, 3.562040858643969, 5.60295387435177, 5.002685340320064, 6.023141848173965, 6.233235835085062, -0.3397046125621217, 0.8908458822028762, -0.5497985994732189, 1.7012084031456796, -0.3096911858605364, 0.3506042015743405, 0.4406444816790965, 3.742121418853481, 4.762577926707381, 2.0913829502662886, 3.111839458120189, 2.4815574973868975, 4.732564500005796, 0.7407787486949496, 5.152752473827991, 6.593396955504086, -0.00955691884468325, 1.2510070026219, 3.5020140052407984, 0.8308190287997055, 0.5606981884854377, -0.09959719894943919, -0.8799462931906573, -0.6098254528763896, 0.6207250418886083, -0.7598925863843161, -0.939973146593828, 0.590711615187023, -0.2796777591589511, -0.8499328664890721, 2.6616380575964094, -0.8199194397874867, 4.70255107330421, 1.641181549742509, 1.2209935759203145, 2.0313560968631177, 1.0108995890092174, 5.723007581158112, 6.533370102100915, 1.1909801492187293, 0.4706579083806818, 0.9808861623076321, 2.811705191104336, 3.2318931649265306, 4.672537646602626, 4.042255685869334, 5.272806180634332, 6.5033566753993295, 1.5811546963393384, 3.6220677120471394, 0.6507384685901937, -0.24966433245736577, -0.7899060130859014, 3.201879738224945, 4.432430232989943, 4.64252421990104, 6.473343248697744, 2.781691764402751, -0.9099597198922427}
+  ```
+
+---
+
+### Task 6: Creating a Model
+
+#### 1. Creating the Model
+
+- The Model defined is : (2 hidden layer and 1 output layer)
+  ```python
+  from tensorflow.keras.models import Sequential
+  from tensorflow.keras.models import Dense
+
+  model = Sequential{[
+      Dense(128, activation="relu", input_shape=(784,)),
+      Dense(128, activation="relu"),
+      Dense(10, activation="softmax")
+  ]}
+  ```
+  - The first layer is the hidden input layer which takes input image.
+  - It has 128 Nodes and uses Relu as activation function.
+  - The Second layer is the hidden input layer with 128 Nodes and Relu Activation Function.
+  - The last layer is output layer with 10 Nodes as output for each individual class and uses softmax activation function for Each class Probability Score.
+- There are many types of activation function in Neural Networks.
+- **Relu** is most used activation function.
+- **Relu** is simply a linear function for all the positive values and it's simply set to zero for all the negative values.
+- Another activation function we are using is **softmax**, and using on output layer.
+- **Softmax** function gives the probability scores for various node.
+- This probability scores are upto 1.
+
+#### 2. Compiling the Model
