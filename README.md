@@ -289,3 +289,20 @@ After this encoding, every label will be converted to a list with 10 elements an
   x_train_reshaped = np.reshape(x_train, (60000, 784))
   x_test_reshaped  = np.reshape(x_test, (10000, 784))
   ```
+
+- Comparing old values vs new reshaped values :
+  ```python
+  print("x_train shape : ", x_train.shape)
+  print("x_test  shape : ", x_test.shape)
+  print("x_train_reshaped shape : ", x_train_reshaped.shape)
+  print("x_test_reshaped  shape : ", x_test_reshaped.shape)
+  ```
+  - The Output is : 
+  ```python
+  x_train shape :  (60000, 28, 28)
+  x_test  shape :  (10000, 28, 28)
+  x_train_reshaped shape :  (60000, 784)
+  x_test_reshaped  shape :  (10000, 784)
+  ```
+
+#### 2. Displaying Pixel Values
