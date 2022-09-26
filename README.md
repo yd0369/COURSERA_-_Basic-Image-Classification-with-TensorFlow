@@ -15,6 +15,8 @@ COURSERA_-_Basic-Image-Classification-with-TensorFlow
 
 - By the end of this course, you will be able to create a neural network model which will be able to classify images of hand written digits with a high degree of accuracy.
 
+![Project Outcome](output.png)
+
 ### Course Structure
 - This course is divided into 4 parts:
 
